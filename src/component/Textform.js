@@ -20,7 +20,7 @@ export default function Textform(props) {
     const[text,setText]=useState('');
   return (
       <>
-    <div className="container">
+    <div className="container" style={{color:props.mode==='light'?'black':'white'}}>
       <h1>{props.title}</h1>
       
       <form>
@@ -31,6 +31,7 @@ export default function Textform(props) {
             rows="15"
             value={text}
             onChange={handleOnchange}
+            style={{backgroundColor:props.mode==='light'?'white':'#1e1e38',color:props.mode==='light'?'black':'white'}}
           ></textarea>
           
         </div>
@@ -39,7 +40,7 @@ export default function Textform(props) {
       <button className="btn btn-primary" onClick={hadleUpclick}>ConverToUppercase </button>
       
     </div>
-    <div className="container">
+    <div className="container" style={{color:props.mode==='light'?'black':'white'}}>
         <h4>Total character{text.length} Total words{text.split(" ").length}  </h4>
         <p>{text}</p>
     </div>
